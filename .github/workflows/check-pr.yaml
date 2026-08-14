@@ -7,9 +7,9 @@ on:
       - master
 
 permissions:
-  contents: read # check if needed
-  pages: write # check if needed
-  id-token: write # check if needed
+  contents: read
+  pages: write
+  id-token: write
   pull-requests: write
   checks: write
   statuses: write
@@ -22,21 +22,14 @@ jobs:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
         with:
-          node-version: '18.x'
-
-      - name: Install Dependencies
-        run: npm ci
-
-      # - name: Build Project
-      #   run: npm run build
+          version: 11.21.0
 
       - name: Install, build, and upload your site output
         uses: withastro/action@v4
         with:
           path: .
-          node-version: '18.x'
-          package-manager: npm
-
+          node-version: 22
+          package-manager: pnpm

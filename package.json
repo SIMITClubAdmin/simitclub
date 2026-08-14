@@ -23,6 +23,7 @@
     "@iconify-json/bi": "^1.1.22",
     "astro": "^4.0.8",
     "astro-icon": "^1.0.1",
+    "sharp": "^0.35.3",
     "typescript": "^5.3.3"
   },
   "engines": {
